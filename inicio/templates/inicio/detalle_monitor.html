@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Monitor {{monitor.id}}</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Monitor {{monitor.id}}
+{% endblock h1_header %}
+
+{% block main %}
+
+<ul>
+    <li>Marca: {{monitor.marca}}</li>
+    <li>Descripción: {{monitor.descripcion | safe }}</li>
+    <li>Año: {{monitor.anio}}</li>
+</ul>
+
+{% endblock main %}

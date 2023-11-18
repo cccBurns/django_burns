@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Procesadores</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Procesadores
+{% endblock h1_header %}
+
+{% block main %}
+<p>
+    <a href={% url "crear_procesador" %}>Crear Procesador</a>
+</p>
+
+<form action={% url "procesadores" %}>
+    <input type="text" name="marca" placeholder="amd, intel...">
+    <input type="submit" value="Buscar">
+</form>
+
+{% if listado_de_procesadores %}
+<ul>
+    {% for procesador in listado_de_procesadores %}
+    <li><a href={% url "detalle_procesador" procesador.id %}>{{procesador}}</a> | <a href={% url "actualizar_procesador" procesador.id %}>Actualizar</a> | <a href={% url "eliminar_procesador" procesador.id %}>Eliminar</a>
+    </li>
+        {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron Procesadores.</p>
+{% endif %}
+
+{% endblock main %}
