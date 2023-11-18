@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
     {% load static %}
     <head>
@@ -12,25 +12,25 @@
         {% block title_head %}
         <title>Base</title>
         {% endblock title_head %}
-        <!-- Favicon-->
+        
         <link rel="icon" type="image/x-icon" href={% static "assets/favicon.ico" %} />
-        <!-- Bootstrap icons-->
+        
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
             rel="stylesheet"
             type="text/css"
         />
-        <!-- Google fonts-->
+        
         <link
             href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
             rel="stylesheet"
             type="text/css"
         />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        
         <link href={% static "css/styles.css" %} rel="stylesheet" />
     </head>
     <body>
-        <!-- Navigation-->
+        
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href={% url "inicio" %}>Inicio</a>
@@ -51,14 +51,14 @@
                 {% endif %}
             </div>
         </nav>
-        <!-- Masthead-->
+        
         {% block contiene_header %}
         <header class="masthead">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="text-center text-white">
-                            <!-- Page heading-->
+                            
                             <h1 class="mb-5">
                                 {% block h1_header %}
                                 Base
@@ -76,7 +76,7 @@
         </main>
 
 
-        <!-- Footer-->
+        
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
@@ -112,14 +112,131 @@
                 </div>
             </div>
         </footer>
-        <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src={% static "js/scripts.js" %}></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
+</html> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="entrenamiento funcional, Zona sur, gym, Lomas de zamora, vida sana, entrenamiento al aire libre" >
+    <meta name="description" content="Somos lideres en entrenamiento funcional en la zona sur del conurbano de la provincia de Bs As.">
+
+    {% block title_head %}
+    <title>Base</title>
+    {% endblock title_head %}
+
+    <link href={% static "css/estilo.css" %} rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/logo1.jpeg" type="image/x-icon">
+    
+</head>
+
+<body id="arriba">
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo">hard <span class="logospan">Gamers</span></a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="../static/assets/img/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href={% url "inicio" %}>Inicio</a></li>
+                    <li><a href={% url "monitores" %}>Monitores</a></li>
+                    <li><a href={% url "procesadores" %}>Procesadores</a></li>
+                    <li><a href={% url "placas" %}>Placas de video</a></li>                    
+                    {% comment %} <li><a href="contacto.html">Contacto</a></li> {% endcomment %}
+                    {% if not request.user.is_authenticated %}
+                    <a class="btn btn-primary" href={% url "login" %}>Iniciar Sesion</a>
+                    <a class="btn btn-secondary" href={% url "registrarse" %}>Registrarse</a>
+                    {% else %}
+                    <a class="navbar-brand" href={% url "editar_perfil" %}>
+                        {% if request.user.datosextra.avatar %}
+                            <img src={{request.user.datosextra.avatar.url}} alt="avatar" height='40px'>
+                        {% endif %}
+                        {{request.user.username}}
+                    </a>
+                    <a class="btn btn-warning" href={% url "logout" %}>Cerrar Sesion</a>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        {% block contiene_header %}
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1><span class="green">hard</span>Gamers</h1>
+                <!-- <h2>¿Quienes somos?</h2> -->
+                <p>
+                    <strong>De gamers para gamers.</strong>
+                </p>
+                <!-- <a href="#" class="btn-1">Informacion</a> -->
+            </div>
+        </div>
+    </header>
+    {% endblock contiene_header %}
+    
+    
+    {% block h1_header %}
+    {% endblock h1_header %}
+
+
+    {% block section %}
+    {% endblock section %}
+
+
+    <main>
+        {% block main %}{% endblock main %}
+    </main>
+
+
+    
+
+<footer class="footer">        
+    <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+        <ul>
+            <li>
+                <a href="#arriba">Inicio</a>
+            </li>
+            {% comment %} <li>
+                <a href="nosotros.html">Nosotros</a>
+            </li> {% endcomment %}
+            <li>
+                <a href="placavideo.html">Placas de video</a>
+            </li>
+            <li>
+                <a href="procesador.html">Procesadores</a>
+            </li>
+            <li>
+                <a href="monitor.html">Monitores</a>
+            </li>
+            {% comment %} <li>
+                <a href="contacto.html">Contacto</a>
+            </li> {% endcomment %}
+        </ul>
+
+        <p class="copyright">
+                HardGamer Argentina 2023 ® todos los derechos reservados
+        </p>
+</footer>
+
+    {% comment %} <script src={% static "js/scripts.js" %}></script> {% endcomment %}
+    <script src={% static "js/scripts.js" %}></script>
+    <script src="https://kit.fontawesome.com/96269ff2ef.js" crossorigin="anonymous"></script>
+        
+</body>
 </html>

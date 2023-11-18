@@ -1,0 +1,641 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/*
+font-family: 'Bebas Neue', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ----- HEADER ----- */
+
+.header {
+    background: linear-gradient(
+        rgba(29,30,35,0.4),
+        rgba(29,30,35,0.4)
+    ),
+    url(../assets/img/tecladogamer.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 0 0 0;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #01fc4c;
+    font-size: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.green {
+    font-size: 60px;
+    
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFFFF;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #01fc4c;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-txt {
+    text-align: center;
+    padding: 0 200px;
+}
+
+.header-txt h1 {
+    font-size: 75px;
+    line-height: 1;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.header-txt p {
+    font-size: 20px;
+    color: #c8c8c8;
+    margin-bottom: 35px;
+    
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 11px 35px;
+    color: #FFFFFF;
+    text-transform: uppercase;    
+    background: linear-gradient(
+        90deg,
+        #3451f5 0%,
+        #01c1fc 100%
+    );
+}
+
+.btn-1:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transition: 1s;
+    color: #141414;
+}
+
+/* ----- NOSOTROS ----- */
+
+.nosotros {
+    padding: 30px;
+    background-color: #aeafaf56;
+}
+
+.nosotros-content {
+    display: flex;
+    align-items: center;
+}
+
+.nosotros-txt {
+    flex-basis: 90%;
+    padding-right: 35px;    
+}
+
+.nosotros-txt ul li {
+    list-style:disc;
+}
+
+span {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #01fc4c;
+}
+
+.logospan {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 35px;
+    color: #202020;
+    margin: 15px 0;
+    line-height: 1;
+}
+
+hr {
+    border: 1px solid rgb #01fc4c;
+    width: 10%;
+    margin-bottom: 30px;
+}
+
+.nosotros-img {
+    flex-basis: 50%;
+}
+
+.nosotros-img img {
+    border-radius: 15px;
+}
+
+/* ----- AREAS ATENDIDAS ----- */
+
+.areas {
+    padding: 30px;
+    background-color: #aeafaf56;
+}
+
+.areas-content {
+    display: flex;
+    align-items: center;
+}
+
+.areas-txt {
+    flex-basis: 100%;
+    padding-right: 35px;
+}
+
+.areas-txt ul li {
+    list-style: disc;
+}
+
+span {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #01fc4c;
+}
+
+.logospan {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 35px;
+    color: #202020;
+    margin: 15px 0;
+    line-height: 1;
+}
+
+hr {
+    border: 1px solid rgb #01fc4c;
+    width: 10%;
+    margin-bottom: 30px;
+}
+
+.areas-img {
+    flex-basis: 50%;
+}
+
+.areas-img img {
+    border-radius: 15px;
+}
+
+/* ----- BLOOG ----- */
+
+.blog {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #aeafaf56;
+}
+
+.blog-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.blog-1 {
+    flex-basis: calc(33.3% - 25px);
+    background-color: #fcfcfc;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.blog-1 img {
+    margin-bottom: 15px;
+}
+
+.blog-txt {
+    padding: 20px;
+}
+
+.blog-txt span {
+    font-size: 15px;
+}
+
+.blog-txt h3 {
+    color: #242424;
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+/* ----- PRENSA ----- */
+
+.prensa {
+    background-color: #aeafaf56;
+}
+
+.prensa-txt {
+    text-align: center;
+    padding: 0 200px;
+}
+
+.prensa-txt h1 {
+    
+    padding-top: 25px;
+    font-size: 35px;
+    line-height: 1;
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;   
+}
+
+p {
+    font-size: 17px;
+    color: #2c2c2c;
+    margin-bottom: 35px;
+}
+
+/* ----- CONTACTO ----- */
+
+/* FORMULARIO */
+
+label {
+    font-size: 25px;
+}
+.formulario {
+    background-color: #d3d3d356;
+}
+
+.formulario-txt {
+    text-align: center;
+    padding: 0 200px;
+}
+
+.formulario-txt h2 {    
+    padding: 25px;
+    font-size: 35px;
+    line-height: 1;
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;   
+}
+
+.formulario{
+    padding: 50px;
+
+}
+
+.input-formulario label{
+    color: #292929;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+.input-formulario input{
+    padding: 12px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.input-formulario input, .input-formulario textarea{
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+}
+
+.input-formulario textarea{
+    resize: none;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-formulario input[type="submit"]{
+    width: auto;
+    padding: 10px 30px;
+    transition: background-color .3s ease-in-out;
+}
+
+.input-formulario input[type="submit"]:hover{
+    background-color: #FFFFFF;
+    color: #01fc4c;
+}
+
+
+/* CONTACTO */
+
+.contacto2 {
+    padding: 30px;
+    background-color: #dbdbdb;
+}
+
+.contacto {
+    padding: 30px;
+    background-color: #d3d3d356;
+}
+
+.contacto-content {
+    display: flex;
+    align-items: center;
+}
+
+.contacto-txt {
+    flex-basis: 50%;
+    padding-right: 35px;
+}
+
+.contacto-txt img {
+    width: 30%;
+}
+
+span {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #01fc4c;
+}
+
+.logospan {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 35px;
+    color: #202020;
+    margin: 15px 0;
+    line-height: 1;
+}
+
+hr {
+    border: 1px solid rgb #01fc4c;
+    width: 10%;
+    margin-bottom: 30px;
+}
+
+.contacto-img {
+    flex-basis: 50%;
+}
+
+.contacto-img img {
+    border-radius: 15px;
+}
+
+
+/* ----- FOOTER ----- */
+
+.footer {
+    padding: 40px 0;
+    background-color: #FFFFFF;
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #191A1F;
+}
+
+.footer .social a {
+    font-size: 24px;
+    color: inherit;
+    border: 1px solid #202020;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+}
+
+.footer .social a:hover {
+    color: #01fc4c;
+    opacity: 0.5;
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer ul li a:hover {
+    color: #01fc4c;
+    opacity: 0.5;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #898989;
+}
+
+#arriba {
+    scroll-behavior: smooth;
+    
+}
+
+/* ----- RESPONSIVE ----- */
+
+/* ----- HEADER ----- */
+
+@media (max-width: 991px) {
+
+    .menu {
+        padding: 20px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #01fc4c;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    .menu .navbar ul li a:hover {
+        color: #191A1F;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .header {
+        min-height: 0vh;
+        padding: 134px 30px; 
+    }
+
+    .header-txt {
+        text-align: center;
+        padding: 0;
+    }
+
+    /* ----- BLOG ----- */
+
+    .blog {
+        padding: 30px;
+    }
+
+    .blog-content {
+        flex-direction: column;
+    }
+
+    .blog-1 {
+        margin-bottom: 30px;
+    }   
+
+    /* ----- NOSOTROS ----- */
+
+    .nosotros {
+        padding: 30px;
+    }
+
+    .nosotros-content {
+        flex-direction: column;
+    }
+
+    /* ----- AREAS ATENDIDAS ----- */
+
+    .areas {
+        padding: 30px;
+    }
+
+    .areas-content {
+        flex-direction: column;
+    }
+
+    /* ----- PRENSA Y DIFUSION ----- */
+
+    .prensa {
+        min-height: 0vh;
+        padding: 100px 30px; 
+    }
+
+    .prensa-txt {
+        text-align: center;
+        padding: 0;
+    }
+
+    .prensa-txt .youtube {
+        width: 80%;        
+        text-align: center;
+    }
+
+    /* ----- CONTACTO ----- */
+
+    .formulario {
+        min-height: 0vh;
+        padding: 100px 30px; 
+    }
+
+    .formulario-txt {
+        text-align: center;
+        padding: 0;
+    }
+
+    .contacto {
+        padding: 30px;
+    }
+
+    .contacto-content {
+        flex-direction: column;
+    }
+
+    /* ----- FOOTER ----- */
+
+    .footer-row {
+        text-align: center;
+    }
+
+    .footer-links {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+
