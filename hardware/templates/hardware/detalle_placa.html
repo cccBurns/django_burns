@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Placa de video {{placa.id}}</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Placa de video {{placa.id}}
+{% endblock h1_header %}
+
+{% block main %}
+
+<ul>
+    <li>Marca: {{placa.marca}}</li>
+    <li>Modelo: {{placa.modelo}}</li>
+    <li>Descripción: {{placa.descripcion}}</li>
+    <li>Fecha de creacion: {{placa.fecha_creacion}}</li>
+</ul>
+
+{% endblock main %}

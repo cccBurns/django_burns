@@ -36,6 +36,7 @@
                 <a class="navbar-brand" href={% url "inicio" %}>Inicio</a>
                 <a class="navbar-brand" href={% url "monitores" %}>Monitores</a>
                 <a class="navbar-brand" href={% url "procesadores" %}>Procesadores</a>
+                <a class="navbar-brand" href={% url "placas" %}>Placas de video</a>
                 {% if not request.user.is_authenticated %}
                 <a class="btn btn-primary" href={% url "login" %}>Iniciar Sesion</a>
                 <a class="btn btn-secondary" href={% url "registrarse" %}>Registrarse</a>
