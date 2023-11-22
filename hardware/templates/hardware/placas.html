@@ -5,13 +5,29 @@
 {% endblock title_head %}
 
 {% block h1_header %}
+<h1 style="text-align: center; margin-top: 20px;" >
     Placas de video
+</h1>
 {% endblock h1_header %}
+
+{% block contiene_header %}
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1><span class="green">Placas de video</span></h1>
+                <!-- <h2>¿Quienes somos?</h2> -->
+                <p>
+                    <strong>De gamers para gamers.</strong>
+                </p>
+                <!-- <a href="#" class="btn-1">Informacion</a> -->
+            </div>
+        </div>
+    </header>
+{% endblock contiene_header %}
 
 {% block main %}
     <div style="text-align: center; margin-top: 20px;">
         <p>
-            <a href={% url "crear_placa" %} class="btn btn-success">Crear Placa de video</a>
+            <a href={% url "crear_placa" %} class="btn-1">Crear Placa de video</a>
         </p>
 
         <form action={% url "placas" %} method="get" style="margin-bottom: 20px;">
@@ -24,9 +40,9 @@
                 {% for placa in listado_de_placas %}
                     <li style="margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
                         <strong>{{ placa }}</strong><br>
-                        <a href={% url "detalle_placa" placa.id %} class="btn btn-warning">Detalle</a> |
-                        <a href={% url "actualizar_placa" placa.id %} class="btn btn-info">Actualizar</a> |
-                        <a href={% url "eliminar_placa" placa.id %} class="btn btn-danger">Eliminar</a>
+                        <a href={% url "actualizar_placa" placa.id %} class="btn-1">Actualizar</a> 
+                        <a href={% url "eliminar_placa" placa.id %} class="btn-1">Eliminar</a>
+                        <a href={% url "detalle_placa" placa.id %} class="btn-1">Detalle</a> 
                     </li>
                 {% endfor %}
             </ul>

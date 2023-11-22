@@ -5,13 +5,29 @@
 {% endblock title_head %}
 
 {% block h1_header %}
+<h1 style="text-align: center; margin-top: 20px;" >
     Procesadores
+</h1>
 {% endblock h1_header %}
+
+{% block contiene_header %}
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1><span class="green">Procesadores</span></h1>
+                <!-- <h2>¿Quienes somos?</h2> -->
+                <p>
+                    <strong>De gamers para gamers.</strong>
+                </p>
+                <!-- <a href="#" class="btn-1">Informacion</a> -->
+            </div>
+        </div>
+    </header>
+{% endblock contiene_header %}
 
 {% block main %}
     <div style="text-align: center; margin-top: 20px;">
         <p>
-            <a href={% url "crear_procesador" %} class="btn btn-success">Crear Procesador</a>
+            <a href={% url "crear_procesador" %} class="btn-1">Crear Procesador</a>
         </p>
 
         <form action={% url "procesadores" %} method="get" style="margin-bottom: 20px;">
@@ -24,9 +40,9 @@
                 {% for procesador in listado_de_procesadores %}
                     <li style="margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
                         <strong>{{ procesador }}</strong><br>
-                        <a href={% url "detalle_procesador" procesador.id %} class="btn btn-warning">Detalle</a> |
-                        <a href={% url "actualizar_procesador" procesador.id %} class="btn btn-info">Actualizar</a> |
-                        <a href={% url "eliminar_procesador" procesador.id %} class="btn btn-danger">Eliminar</a>
+                        <a href={% url "actualizar_procesador" procesador.id %} class="btn-1">Actualizar</a> 
+                        <a href={% url "eliminar_procesador" procesador.id %} class="btn-1">Eliminar</a>
+                        <a href={% url "detalle_procesador" procesador.id %} class="btn-1">Detalle</a> 
                     </li>
                 {% endfor %}
             </ul>

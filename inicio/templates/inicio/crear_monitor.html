@@ -1,46 +1,33 @@
 {% extends "base.html" %}
 
 {% block title_head %}
-<title>Crear Monitor</title>
+    <title>Crear Monitor</title>
 {% endblock title_head %}
 
 {% block h1_header %}
-Crear Monitor
+    <h1 style="text-align: center; margin-top: 20px;">
+        Crear Monitor
+    </h1>
 {% endblock h1_header %}
 
 {% block main %}
-
-<!--
-
-    <form action="" method="POST">
-        {% csrf_token %}
-        <p>
-            Marca:
-            <input type="text" name="marca">
-        </p>
-        <p>
-            Descripcion:
-            <input type="text" name="descripcion">
-        </p>
-        <p>
-            Año:
-            <input type="number" name="anio">
-        </p>
-        
-        <input type="submit" value="Crear">
-        {% comment %} <button>Crear</button> {% endcomment %}
-        
-    </form>
--->
-
-
-<form action="" method="POST">
-    {% csrf_token %}
-    <table>
-        {{formulario.media}}
-        {{formulario}}
-    </table>
-    <input type="submit" value="Crear">
-</form>
-
+    <div style="max-width: 400px; margin: auto; margin-top: 50px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ formulario.media }}
+            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
+                <label for="{{ formulario.marca.id_for_label }}" style="font-size: 16px;">Marca:</label>
+                {{ formulario.marca }}
+            </div>
+            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
+                <label for="{{ formulario.descripcion.id_for_label }}" style="font-size: 16px;">Descripción:</label>
+                {{ formulario.descripcion }}
+            </div>
+            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
+                <label for="{{ formulario.anio.id_for_label }}" style="font-size: 16px;">Año:</label>
+                {{ formulario.anio }}
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; border-radius: 5px; cursor: pointer; font-size: 16px; background-color: #01fc4c;">Crear Monitor</button>
+        </form>
+    </div>
 {% endblock main %}

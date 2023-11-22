@@ -1,21 +1,36 @@
 {% extends "base.html" %}
 
 {% block title_head %}
-<title>Registro</title>
+    <title>Registro</title>
 {% endblock title_head %}
 
 {% block h1_header %}
-Registrate
+<h1 style="text-align: center; margin-top: 20px;" >
+    Registrate
+</h1>
 {% endblock h1_header %}
 
 {% block main %}
-
-<form action={% url "registrarse" %} method="POST">
-    {% csrf_token %}
-    <table>
-        {{formulario_de_registro}}
-    </table>
-    <input type="submit" value="Registrarse">
-</form>
-
+    <div style="max-width: 400px; margin: auto; margin-top: 50px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <form action={% url "registrarse" %} method="POST">
+            {% csrf_token %}
+            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
+                <label for="{{ formulario_de_registro.username.id_for_label }}" style="font-size: 16px;">Usuario:</label>
+                <input type="text" name="{{ formulario_de_registro.username.name }}" id="{{ formulario_de_registro.username.id_for_label }}" required style="width: 100%; font-size: 16px;">
+            </div>
+            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
+                <label for="{{ formulario_de_registro.email.id_for_label }}" style="font-size: 16px;">Correo electrónico:</label>
+                <input type="email" name="{{ formulario_de_registro.email.name }}" id="{{ formulario_de_registro.email.id_for_label }}" required style="width: 100%; font-size: 16px;">
+            </div>
+            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
+                <label for="{{ formulario_de_registro.password1.id_for_label }}" style="font-size: 16px;">Contraseña:</label>
+                <input type="password" name="{{ formulario_de_registro.password1.name }}" id="{{ formulario_de_registro.password1.id_for_label }}" required style="width: 100%; font-size: 16px;">
+            </div>
+            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
+                <label for="{{ formulario_de_registro.password2.id_for_label }}" style="font-size: 16px;">Confirmar contraseña:</label>
+                <input type="password" name="{{ formulario_de_registro.password2.name }}" id="{{ formulario_de_registro.password2.id_for_label }}" required style="width: 100%; font-size: 16px;">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; border-radius: 5px; cursor: pointer; font-size: 16px;">Registrarse</button>
+        </form>
+    </div>
 {% endblock main %}

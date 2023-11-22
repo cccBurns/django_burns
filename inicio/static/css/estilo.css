@@ -86,6 +86,30 @@ img {
     color: #01fc4c;
 }
 
+.navbar .login ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #f60404;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #01fc4c;
+}
+
+.btn-3 {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFFFF;
+    display: block;
+    font-weight: 600;
+}
+
+.btn-3:hover {
+    color: #01fc4c;
+}
+
 #menu {
     display: none;
 }
@@ -139,25 +163,6 @@ img {
     color: #141414;
 }
 
-.btn-2 {
-    display: inline-block;
-    padding: 11px 35px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    border-radius: 5px;
-    background: linear-gradient(
-        90deg,
-        #055001 0%,
-        #00c707 100%
-    );
-}
-
-.btn-2:hover {
-    background-color: #FFFFFF;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    transition: 1s;
-    color: #141414;
-}
 
 /* ----- NOSOTROS ----- */
 
