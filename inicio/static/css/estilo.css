@@ -127,12 +127,32 @@ img {
     text-transform: uppercase;    
     background: linear-gradient(
         90deg,
-        #3451f5 0%,
-        #01c1fc 100%
+        #055001 0%,
+        #00c707 100%
     );
 }
 
 .btn-1:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transition: 1s;
+    color: #141414;
+}
+
+.btn-2 {
+    display: inline-block;
+    padding: 11px 35px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background: linear-gradient(
+        90deg,
+        #055001 0%,
+        #00c707 100%
+    );
+}
+
+.btn-2:hover {
     background-color: #FFFFFF;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     transition: 1s;

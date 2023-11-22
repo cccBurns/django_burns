@@ -1,34 +1,39 @@
 {% extends "base.html" %}
 
 {% block title_head %}
-<title>Monitores</title>
+    <title>Monitores</title>
 {% endblock title_head %}
 
 {% block h1_header %}
-Monitores
+<h1 style="text-align: center; margin-top: 20px;" >
+    Monitores
+</h1>
 {% endblock h1_header %}
 
-
 {% block main %}
+    <div style="text-align: center; margin-top: 20px;">
+        <p>
+            <a href={% url "crear_monitor" %} class="btn-1">Crear Monitor</a>
+        </p>
 
-<p>
-    <a href={% url "crear_monitor" %}>Crear Monitor</a>
-</p>
+        <form action="" method="get" style="margin-bottom: 20px;">
+            {{ formulario }}
+            <input type="submit" value="Buscar Monitor" class="btn btn-secondary" style="margin-top: 10px;">
+        </form>
 
-<form action="">
-    {% comment %} <input type="text" name="marca" placeholder="Wilson, Head..."> {% endcomment %}
-    {{formulario}}
-    <input type="submit" value="Buscar">
-</form>
-
-{% if listado_de_monitores %}
-<ul>
-    {% for monitor in listado_de_monitores %}
-    <li>{{monitor}} | <a href={% url "actualizar_monitor" monitor.id %}>Actualizar</a> | <a href={% url "eliminar_monitor" monitor.id %}>Eliminar</a> | <a href={% url "detalle_monitor" monitor.id %}>Detalle</a></li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No se encontraron monitores.</p>
-{% endif %}
-
+        {% if listado_de_monitores %}
+            <ul style="list-style: none; padding: 0;">
+                {% for monitor in listado_de_monitores %}
+                    <li style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ccc;">
+                        <strong>{{ monitor }}</strong><br>
+                        <a href={% url "actualizar_monitor" monitor.id %} class="btn-1">Actualizar</a> 
+                        <a href={% url "eliminar_monitor" monitor.id %} class="btn-1">Eliminar</a> 
+                        <a href={% url "detalle_monitor" monitor.id %} class="btn-1">Detalle</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se encontraron monitores.</p>
+        {% endif %}
+    </div>
 {% endblock main %}

@@ -1,32 +1,37 @@
 {% extends "base.html" %}
 
 {% block title_head %}
-<title>Procesadores</title>
+    <title>Procesadores</title>
 {% endblock title_head %}
 
 {% block h1_header %}
-Procesadores
+    Procesadores
 {% endblock h1_header %}
 
 {% block main %}
-<p>
-    <a href={% url "crear_procesador" %}>Crear Procesador</a>
-</p>
+    <div style="text-align: center; margin-top: 20px;">
+        <p>
+            <a href={% url "crear_procesador" %} class="btn btn-success">Crear Procesador</a>
+        </p>
 
-<form action={% url "procesadores" %}>
-    <input type="text" name="marca" placeholder="amd, intel...">
-    <input type="submit" value="Buscar">
-</form>
+        <form action={% url "procesadores" %} method="get" style="margin-bottom: 20px;">
+            <input type="text" name="marca" placeholder="Buscar Procesador..." class="form-control" style="margin-top: 10px;">
+            <input type="submit" value="Buscar" class="btn btn-secondary" style="margin-top: 10px;">
+        </form>
 
-{% if listado_de_procesadores %}
-<ul>
-    {% for procesador in listado_de_procesadores %}
-    <li><a href={% url "detalle_procesador" procesador.id %}>{{procesador}}</a> | <a href={% url "actualizar_procesador" procesador.id %}>Actualizar</a> | <a href={% url "eliminar_procesador" procesador.id %}>Eliminar</a>
-    </li>
-        {% endfor %}
-</ul>
-{% else %}
-<p>No se encontraron Procesadores.</p>
-{% endif %}
-
+        {% if listado_de_procesadores %}
+            <ul style="list-style: none; padding: 0;">
+                {% for procesador in listado_de_procesadores %}
+                    <li style="margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ccc;">
+                        <strong>{{ procesador }}</strong><br>
+                        <a href={% url "detalle_procesador" procesador.id %} class="btn btn-warning">Detalle</a> |
+                        <a href={% url "actualizar_procesador" procesador.id %} class="btn btn-info">Actualizar</a> |
+                        <a href={% url "eliminar_procesador" procesador.id %} class="btn btn-danger">Eliminar</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se encontraron Procesadores.</p>
+        {% endif %}
+    </div>
 {% endblock main %}
