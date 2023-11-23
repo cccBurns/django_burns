@@ -30,9 +30,10 @@
             <nav class="navbar">
                 <ul>
                     <li><a href={% url "inicio" %}>Inicio</a></li>
+                    <li><a href={% url "about" %}>About</a></li>
                     <li><a href={% url "monitores" %}>Monitores</a></li>
                     <li><a href={% url "procesadores" %}>Procesadores</a></li>
-                    <li><a href={% url "placas" %}>Placas de video</a></li>                    
+                    <li><a href={% url "placas" %}>Placas</a></li>                    
                     {% comment %} <li><a href="contacto.html">Contacto</a></li> {% endcomment %}
                     {% if not request.user.is_authenticated %}
                     <li><a href={% url "login" %}>Iniciar Sesion</a></li>
@@ -88,9 +89,9 @@
             <li>
                 <a href="#arriba">Inicio</a>
             </li>
-            {% comment %} <li>
-                <a href="nosotros.html">Nosotros</a>
-            </li> {% endcomment %}
+            <li>
+                <a href="about">About</a>
+            </li>
             <li>
                 <a href="monitores">Monitores</a>
             </li>
@@ -98,7 +99,7 @@
                 <a href="hardware/procesadores">Procesadores</a>
             </li>
             <li>
-                <a href="hardware/placas">Placas de video</a>
+                <a href="hardware/placas">Placas</a>
             </li>
             {% comment %} <li>
                 <a href="contacto.html">Contacto</a>
