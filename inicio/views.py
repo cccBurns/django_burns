@@ -11,6 +11,10 @@ def about(request):
     
     return render(request, 'inicio/about.html', {})
 
+def contacto(request):
+    
+    return render(request, 'inicio/contacto.html', {})
+
 def monitores(request):
     
     formulario = BusquedaMonitorFormulario(request.GET)

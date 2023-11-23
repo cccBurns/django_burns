@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+    <title>Contacto</title>
+{% endblock title_head %}
+
+{% block contiene_header %}
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1><span class="green">Contacto</span></h1>
+                <!-- <h2>¿Quienes somos?</h2> -->
+                <p>
+                    <strong>De gamers para gamers.</strong>
+                </p>
+                <!-- <a href="#" class="btn-1">Informacion</a> -->
+            </div>
+        </div>
+    </header>
+{% endblock contiene_header %}
+
+{% block h1_header %}
+
+{% endblock h1_header %}
+
+{% block main %}
+    
+{% endblock main %}
+
+{% block section %}
+
+<section class="contacto2">
+    <div class="contacto-content container">            
+        <div class="contacto-txt">
+            <span><strong>Contactanos en:</strong></span>
+            
+            <h2>Christian Enrique Burns</h2>
+            {% comment %} <img src="../static/assets/img/ccc2.jpg" alt=""> {% endcomment %}
+            
+            
+            <p>
+               <strong>Lugar de atención: Belgrano 1981, Banfield.</strong>.                   
+            </p>                
+        </div>
+        <div class="contacto-img">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.6962985580076!2d-58.39310132368033!3d-34.738048872906326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd5f14f4ded7%3A0xced372f5c0fbdc12!2sBelgrano%201981%2C%20B1828ACU%20Banfield%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1700756705359!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>           
+    </div>
+</section>
+{% endblock section %}
+
+{% block footer %}
+<footer class="footer">        
+    <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <ul>
+        <li>
+            <a href="{% url 'inicio' %}">Inicio</a>
+        </li>
+        <li>
+            <a href="{% url 'about' %}">About</a>
+        </li>
+        <li>
+            <a href="{% url 'monitores' %}">Monitores</a>
+        </li>
+        <li>
+            <a href="{% url 'procesadores' %}">Procesadores</a>
+        </li>
+        <li>
+            <a href="{% url 'placas' %}">Placas</a>
+        </li>
+        <li>
+            <a href="#arriba">Contacto</a>
+        </li>
+    </ul>
+
+        <p class="copyright">
+                HardGamer Argentina 2023 ® todos los derechos reservados
+        </p>
+</footer>
+{% endblock footer %}
+
+
+

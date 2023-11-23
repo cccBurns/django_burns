@@ -33,11 +33,12 @@
                     <li><a href={% url "about" %}>About</a></li>
                     <li><a href={% url "monitores" %}>Monitores</a></li>
                     <li><a href={% url "procesadores" %}>Procesadores</a></li>
-                    <li><a href={% url "placas" %}>Placas</a></li>                    
+                    <li><a href={% url "placas" %}>Placas</a></li>
+                    <li><a href={% url "contacto" %}>Contacto</a></li>                 
                     {% comment %} <li><a href="contacto.html">Contacto</a></li> {% endcomment %}
                     {% if not request.user.is_authenticated %}
-                    <li><a href={% url "login" %}>Iniciar Sesion</a></li>
-                    <li><a href={% url "registrarse" %}>Registrarse</a></li>
+                    <li><a href={% url "login" %} class="red-link">Iniciar Sesion</a></li>
+                    <li><a href={% url "registrarse" %} class="red-link">Registrarse</a></li>
                     {% else %}
                     <li><a href={% url "editar_perfil" %}>
                         {% if request.user.datosextra.avatar %}
@@ -77,6 +78,7 @@
         {% block main %}{% endblock main %}
     </main>    
 
+{% block footer %}
 <footer class="footer">        
     <div class="social">
         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -84,34 +86,35 @@
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-facebook-f"></i></a>
     </div>
-
-        <ul>
-            <li>
-                <a href="#arriba">Inicio</a>
-            </li>
-            <li>
-                <a href="about">About</a>
-            </li>
-            <li>
-                <a href="monitores">Monitores</a>
-            </li>
-            <li>
-                <a href="hardware/procesadores">Procesadores</a>
-            </li>
-            <li>
-                <a href="hardware/placas">Placas</a>
-            </li>
-            {% comment %} <li>
-                <a href="contacto.html">Contacto</a>
-            </li> {% endcomment %}
-        </ul>
-
-        <p class="copyright">
-                HardGamer Argentina 2023 ® todos los derechos reservados
-        </p>
+    
+    <ul>
+        <li>
+            <a href="#arriba">Inicio</a>
+        </li>
+        <li>
+            <a href="about">About</a>
+        </li>
+        <li>
+            <a href="monitores">Monitores</a>
+        </li>
+        <li>
+            <a href="hardware/procesadores">Procesadores</a>
+        </li>
+        <li>
+            <a href="hardware/placas">Placas</a>
+        </li>
+        <li>
+            <a href="contacto">Contacto</a>
+        </li>
+    </ul>
+    
+    <p class="copyright">
+        HardGamer Argentina 2023 ® todos los derechos reservados
+    </p>
 </footer>
+{% endblock footer %}
 
-    {% comment %} <script src={% static "js/scripts.js" %}></script> {% endcomment %}
+{% comment %} <script src={% static "js/scripts.js" %}></script> {% endcomment %}
     <script src={% static "js/scripts.js" %}></script>
     <script src="https://kit.fontawesome.com/96269ff2ef.js" crossorigin="anonymous"></script>
         

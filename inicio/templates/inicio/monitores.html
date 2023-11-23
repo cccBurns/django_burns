@@ -51,3 +51,39 @@
         {% endif %}
     </div>
 {% endblock main %}
+
+{% block footer %}
+<footer class="footer">        
+    <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <ul>
+        <li>
+            <a href="{% url 'inicio' %}">Inicio</a>
+        </li>
+        <li>
+            <a href="{% url 'about' %}">About</a>
+        </li>
+        <li>
+            <a href="#arriba">Monitores</a>
+        </li>
+        <li>
+            <a href="{% url 'procesadores' %}">Procesadores</a>
+        </li>
+        <li>
+            <a href="{% url 'placas' %}">Placas</a>
+        </li>
+        <li>
+            <a href="{% url 'contacto' %}">Contacto</a>
+        </li>
+    </ul>
+
+        <p class="copyright">
+                HardGamer Argentina 2023 ® todos los derechos reservados
+        </p>
+</footer>
+{% endblock footer %}

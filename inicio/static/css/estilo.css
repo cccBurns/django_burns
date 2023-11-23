@@ -86,12 +86,8 @@ img {
     color: #01fc4c;
 }
 
-.btn-3 {
-    font-size: 18px;
-    padding: 20px;
-    color: #FFFFFF;
-    display: block;
-    font-weight: 600;
+.red-link {
+    color: red;
 }
 
 .btn-3:hover {
@@ -127,7 +123,7 @@ img {
 
 .header-txt p {
     font-size: 20px;
-    color: #c8c8c8;
+    color: #9b9b9b;
     margin-bottom: 35px;
     
 }
