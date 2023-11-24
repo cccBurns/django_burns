@@ -96,19 +96,19 @@
             <a href="#arriba">Inicio</a>
         </li>
         <li>
-            <a href="about">About</a>
+            <a href="{% url 'about' %}">About</a>
         </li>
         <li>
-            <a href="monitores">Monitores</a>
+            <a href="{% url 'productos' %}">Productos</a>
         </li>
+        {% comment %} <li>
+            <a href="{% url 'procesadores' %}">Procesadores</a>
+        </li> {% endcomment %}
+        {% comment %} <li>
+            <a href="{% url 'placas' %}">Placas</a>
+        </li> {% endcomment %}
         <li>
-            <a href="hardware/procesadores">Procesadores</a>
-        </li>
-        <li>
-            <a href="hardware/placas">Placas</a>
-        </li>
-        <li>
-            <a href="contacto">Contacto</a>
+            <a href="{% url 'contacto' %}">Contacto</a>
         </li>
     </ul>
     
