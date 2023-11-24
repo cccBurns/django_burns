@@ -1,5 +1,5 @@
 from django import forms
-from inicio.models import Monitor
+from .models import Monitor
 from ckeditor.fields import RichTextFormField
   
 
