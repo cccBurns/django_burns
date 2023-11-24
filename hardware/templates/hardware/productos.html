@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+<title>Productos</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+
+{% endblock h1_header %}
+
+{% block contiene_header %}
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1><span class="green">Productos</span></h1>
+                <!-- <h2>¿Quienes somos?</h2> -->
+                <p>
+                    <strong><span style="color: white; font-size: 20px;">La mas amplia gama de marcas y modelos en Monitores, Procesadores y Placas de video.</strong>
+                </p>
+                <a href="#abajo" class="btn-1">Ver mas</a>
+            </div>
+        </div>
+    </header>
+{% endblock contiene_header %}
+
+
+{% block section %}
+
+<section id="abajo" class="blog" >
+    <span></span>
+    <h2>Nuestros Productos</h2>
+
+    <div class="blog-content container">
+        <div class="blog-1">
+            <img src="../inicio/static/assets/img/bg-showcase-3.jpg" alt="">
+            <div class="blog-txt">
+                <span> <strong> Placas de video </strong> </span>
+                <h3>Nvidia - AMD </h3>
+                <p>Poseemos las principales marcas de tarjetas graficas del mercado(AMD - Nvidia), desde gama baja hasta las placas mas potentes.
+                </p>
+                <a href={% url "placas" %} class="btn-1">Placas de video</a>
+            </div>
+        </div>
+
+        <div class="blog-1">
+            <img src="../inicio/static/assets/img/bg-showcase.jpg" alt="">
+            <div class="blog-txt">
+                <span> <strong> Procesadores </strong> </span>
+                <h3>Intel - AMD</h3>
+                <p>Poseemos las principales marcas de procesadores del mercado(AMD - Intel), desde gama baja hasta los procesadores mas potentes.
+                </p>
+                <a href={% url "procesadores" %} class="btn-1">Procesadores</a>
+            </div>
+        </div>
+
+        <div class="blog-1">
+            <img src="../inicio/static/assets/img/bg-showcase-1.jpg" alt="">
+            <div class="blog-txt">
+                <span> <strong> Monitores </strong> </span>
+                <h3>La mejor linea</h3>
+                <p>Poseemos un amplio abanico de diferentes gamas y marcas de monitores, como LG, Samgung, Sony, Dell, etc.
+                </p>
+                <a href={% url "monitores" %} class="btn-1">Monitores</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock section %}
+
+{% block footer %}
+<footer class="footer">        
+    <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <ul>
+        <li>
+            <a href="{% url 'inicio' %}">Inicio</a>
+        </li>
+        <li>
+            <a href="{% url 'about' %}">About</a>
+        </li>
+        <li>
+            <a href="{% url 'monitores' %}">Monitores</a>
+        </li>
+        <li>
+            <a href="{% url 'procesadores' %}">Procesadores</a>
+        </li>
+        <li>
+            <a href="{% url 'placas' %}">Placas</a>
+        </li>
+        <li>
+            <a href="{% url 'contacto' %}">Contacto</a>
+        </li>
+    </ul>
+
+        <p class="copyright">
+                HardGamer Argentina 2023 ® todos los derechos reservados
+        </p>
+</footer>
+{% endblock footer %}

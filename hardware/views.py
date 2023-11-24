@@ -6,6 +6,9 @@ from hardware.models import Procesador, Placa
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+def productos(request):
+    
+    return render(request, 'hardware/productos.html', {})
 
 class ListadoProcesadores(ListView):
     model = Procesador

@@ -22,18 +22,22 @@
 <body id="arriba">
     <header class="header">
         <div class="menu container">
+            
             <a href="#" class="logo">hard <span class="logospan">Gamers</span></a>
             <input type="checkbox" id="menu" />
+            {% block menuicon %}
             <label for="menu">
                 <img src="../static/assets/img/menu.png" class="menu-icono" alt="menu">
             </label>
+            {% endblock menuicon %}
             <nav class="navbar">
                 <ul>
                     <li><a href={% url "inicio" %}>Inicio</a></li>
                     <li><a href={% url "about" %}>About</a></li>
-                    <li><a href={% url "monitores" %}>Monitores</a></li>
-                    <li><a href={% url "procesadores" %}>Procesadores</a></li>
-                    <li><a href={% url "placas" %}>Placas</a></li>
+                    <li><a href={% url "productos" %}>Productos</a></li>
+                    {% comment %} <li><a href={% url "monitores" %}>Monitores</a></li> {% endcomment %}
+                    {% comment %} <li><a href={% url "procesadores" %}>Procesadores</a></li> {% endcomment %}
+                    {% comment %} <li><a href={% url "placas" %}>Placas</a></li> {% endcomment %}
                     <li><a href={% url "contacto" %}>Contacto</a></li>                 
                     {% comment %} <li><a href="contacto.html">Contacto</a></li> {% endcomment %}
                     {% if not request.user.is_authenticated %}

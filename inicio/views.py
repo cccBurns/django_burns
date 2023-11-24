@@ -15,9 +15,10 @@ def contacto(request):
     
     return render(request, 'inicio/contacto.html', {})
 
-def monitores(request):
-    
+def monitores(request):    
     formulario = BusquedaMonitorFormulario(request.GET)
+    listado_de_monitores = None
+    
     if formulario.is_valid():
         marca_a_buscar = formulario.cleaned_data.get('marca')
         listado_de_monitores = Monitor.objects.filter(marca__icontains=marca_a_buscar)
