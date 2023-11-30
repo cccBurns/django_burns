@@ -7,7 +7,8 @@ class BaseMonitorFormulario(forms.Form):
     marca = forms.CharField(max_length=30)
     descripcion = RichTextFormField()
     anio = forms.IntegerField()
-    foto = forms.ImageField(required=False)
+    imagen = forms.ImageField()
+    #foto = forms.ImageField(required=False)
     
 
 class CrearMonitorFormulario(BaseMonitorFormulario):

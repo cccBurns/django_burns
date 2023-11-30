@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title_head %}
+{% comment %} {% block title_head %}
     <title>Monitores</title>
 {% endblock title_head %}
 
@@ -52,7 +52,97 @@
         {% else %}
             <p>No se encontraron monitores.</p>
         {% endif %}
+        
     </div>
+{% endblock main %}
+
+{% block footer %}
+<footer class="footer">        
+    <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <ul>
+        <li>
+            <a href="{% url 'inicio' %}">Inicio</a>
+        </li>
+        <li>
+            <a href="{% url 'about' %}">About</a>
+        </li>
+        <li>
+            <a href="{% url 'productos' %}">Productos</a>
+        </li>        
+        <li>
+            <a href="{% url 'contacto' %}">Contacto</a>
+        </li>
+    </ul>
+
+        <p class="copyright">
+                HardGamer Argentina 2023 ® todos los derechos reservados
+        </p>
+</footer>
+{% endblock footer %}  {% endcomment %}
+
+
+
+
+{% block title_head %}
+<title>Monitores</title>
+{% endblock title_head %}
+
+{% block contiene_header %}
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1><span class="green">Monitores</span></h1>
+                <!-- <h2>¿Quienes somos?</h2> -->
+                <p>
+                    <strong style="color: white; font-size: 20px;">Contamos con las mas amplias gamas y modelos de Monitores, desde los mas economicos hasta los mas potentes del mercado.</strong>
+                </p>
+                <a href="#abajo" class="btn-1">Ver mas</a>
+            </div>
+        </div>
+    </header>
+{% endblock contiene_header %}
+
+{% block h1_header %}
+<h1 style="text-align: center; margin-top: 20px;" >
+    Monitores
+</h1>
+{% endblock h1_header %}
+
+{% block main %}
+<p>
+    <a href={% url "crear_monitor" %}>Crear Monitor</a>
+</p>
+
+<form action={% url "monitores" %}>
+    <input type="text" name="marca" placeholder="Dell, LG...">
+    <input type="submit" value="Buscar">
+</form>
+
+{% if listado_de_monitores %}
+<ul>
+    {% for monitor in listado_de_monitores %}
+    <li><a href={% url "detalle_monitor" monitor.id %}>{{monitor}}</a> | <a href={% url "actualizar_monitor" monitor.id %}>Actualizar</a> | <a href={% url "eliminar_monitor" monitor.id %}>Eliminar</a>
+    </li>
+        {% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron monitores.</p>
+{% endif %}
+
+{% if monitor %}
+        <form method="POST" action="{% url 'agregar_al_carrito' monitor.id %}" class="form_producto" enctype="multipart/form-data">
+            {% csrf_token %}
+            <img src="{{ monitor.imagen.url }}" alt="Producto">
+            <!-- Agrega aquí otros campos del formulario si es necesario -->
+            <input type="submit" value="Agregar al carrito">
+        </form>
+{% endif %}
+
 {% endblock main %}
 
 {% block footer %}
