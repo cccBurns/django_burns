@@ -6,9 +6,8 @@ from ckeditor.fields import RichTextFormField
 class BaseMonitorFormulario(forms.Form):
     marca = forms.CharField(max_length=30)
     descripcion = RichTextFormField()
-    anio = forms.IntegerField()
-    imagen = forms.ImageField()
-    #foto = forms.ImageField(required=False)
+    anio = forms.IntegerField()    
+    imagen = forms.ImageField(required=False)
     
 
 class CrearMonitorFormulario(BaseMonitorFormulario):

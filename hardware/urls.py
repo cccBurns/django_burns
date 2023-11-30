@@ -16,6 +16,6 @@ urlpatterns = [
     path('placas/crear/', CrearPlaca.as_view(), name='crear_placa'),
     path('placas/<int:pk>/', DetallePlaca.as_view(), name='detalle_placa'),
     path('placas/<int:pk>/actualizar/', ActualizarPlaca.as_view(), name='actualizar_placa'),
-    path('placas/<int:pk>/eliminar/', EliminarPlaca.as_view(), name='eliminar_placa'),
-    
+    path('placas/<int:pk>/eliminar/', EliminarPlaca.as_view(), name='eliminar_placa'),    
 ]
+

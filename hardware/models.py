@@ -4,9 +4,8 @@ from ckeditor.fields import RichTextField
 class Monitor(models.Model):
     marca = models.CharField(max_length=30)
     descripcion = RichTextField()
-    anio = models.IntegerField()
-    imagen = models.ImageField(upload_to='productos', default='default.jpg')
-    #foto = models.ImageField(upload_to='foto', null=True, blank=True)
+    anio = models.IntegerField()    
+    imagen = models.ImageField(upload_to='imagen', null=True, blank=True)
     
     def __str__(self):
         return f'{self.id} - {self.marca} - {self.anio}'

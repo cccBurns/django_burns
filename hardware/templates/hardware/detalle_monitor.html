@@ -14,6 +14,13 @@
             <li style="margin-bottom: 10px;">Marca: {{monitor.marca}}</li>
             <li style="margin-bottom: 10px;">Descripción: {{monitor.descripcion | safe }}</li>
             <li style="margin-bottom: 10px;">Año: {{monitor.anio}}</li>
-        </ul>
+            {% if monitor.imagen %}
+            <img src="{{ monitor.imagen.url }}" alt="{{ monitor.marca }} - Imagen">
+            {% else %}
+            <p>No hay imagen disponible.</p>
+            <p>Debug: {{ monitor.imagen }}</p>
+            {% endif %}
+        </ul>        
     </div>
 {% endblock main %}
+

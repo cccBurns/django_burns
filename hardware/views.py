@@ -25,7 +25,7 @@ def listado_monitores(request):
 def crear_monitor(request):    
     
     if request.method == 'POST':
-        formulario = CrearMonitorFormulario(request.POST)
+        formulario = CrearMonitorFormulario(request.POST, request.FILES)
         if formulario.is_valid():
             info_limpia = formulario.cleaned_data
             
@@ -54,7 +54,7 @@ def actualizar_monitor(request, monitor_id):
     monitor_a_actualizar = Monitor.objects.get(id=monitor_id)
     
     if request.method == "POST":
-        formulario = ActualizarMonitorFormulario(request.POST)
+        formulario = ActualizarMonitorFormulario(request.POST, request.FILES)
         if formulario.is_valid():
             info_nueva = formulario.cleaned_data
             
