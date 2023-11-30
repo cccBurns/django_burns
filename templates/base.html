@@ -61,7 +61,7 @@
                 <h1><span class="green">hard</span>Gamers</h1>
                 <!-- <h2>¿Quienes somos?</h2> -->
                 <p>
-                    <strong style="color: white; font-size: 20px;">De gamers para gamers.</strong>
+                    <strong >De gamers para gamers.</strong>
                 </p>
                 <!-- <a href="#" class="btn-1">Informacion</a> -->
             </div>
@@ -71,16 +71,14 @@
     
     
     {% block h1_header %}
-    {% endblock h1_header %}
-
-
-    {% block section %}
-    {% endblock section %}
-
-
+    {% endblock h1_header %}    
+    
     <main>
         {% block main %}{% endblock main %}
     </main>    
+    
+    {% block section %}
+    {% endblock section %}
 
 {% block footer %}
 <footer class="footer">        
