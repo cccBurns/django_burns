@@ -44,7 +44,7 @@
                     <li><a href={% url "login" %} style="color: red;">Iniciar Sesion</a></li>
                     <li><a href={% url "registrarse" %} style="color: red;">Registrarse</a></li>
                     {% else %}
-                    <li><a href={% url "editar_perfil" %} style="color: green;">
+                    <li><a href={% url "editar_perfil" %} style="color: #00db42;">
                         {% if request.user.datosextra.avatar %}
                             <img src={{request.user.datosextra.avatar.url}} alt="avatar" height='40px'>
                         {% endif %}
