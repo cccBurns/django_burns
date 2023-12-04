@@ -8,7 +8,7 @@ class Monitor(models.Model):
     imagen = models.ImageField(upload_to='imagen', null=True, blank=True)
     
     def __str__(self):
-        return f'{self.id} - {self.marca} - {self.anio}'
+        return f'{self.id} - {self.marca} - {self.anio} - {self.imagen}'
 
 class Procesador(models.Model):
     marca = models.CharField(max_length=30)
@@ -17,7 +17,7 @@ class Procesador(models.Model):
     fecha_creacion = models.DateField()
     
     def __str__(self):
-        return f'{self.marca} - {self.modelo}'
+        return f'{self.marca} - {self.modelo} - {self.fecha_creacion}'
     
 class Placa(models.Model):
     marca = models.CharField(max_length=30)
@@ -26,4 +26,4 @@ class Placa(models.Model):
     fecha_creacion = models.DateField()
     
     def __str__(self):
-        return f'{self.marca} - {self.modelo}'
+        return f'{self.marca} - {self.modelo} - {self.fecha_creacion}'

@@ -41,7 +41,7 @@
                     <li><a href={% url "contacto" %}>Contacto</a></li>                 
                     {% comment %} <li><a href="contacto.html">Contacto</a></li> {% endcomment %}
                     {% if not request.user.is_authenticated %}
-                    <li><a href={% url "login" %} style="color: red;">Iniciar Sesion</a></li>
+                    <li><a href={% url "login" %} style="color: yellow;">Iniciar Sesion</a></li>
                     <li><a href={% url "registrarse" %} style="color: red;">Registrarse</a></li>
                     {% else %}
                     <li><a href={% url "editar_perfil" %} style="color: #00db42;">

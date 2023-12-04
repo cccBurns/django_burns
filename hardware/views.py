@@ -65,7 +65,7 @@ def actualizar_monitor(request, monitor_id):
             monitor_a_actualizar.save()
             return redirect('hardware/monitores')
         else:
-            return render(request, 'hardware/actualizar_monitor.html', {'formaulario': formulario})
+            return render(request, 'hardware/monitores.html', {'formaulario': formulario})
     
     
     formulario = ActualizarMonitorFormulario(initial={'marca': monitor_a_actualizar.marca, 'descripcion': monitor_a_actualizar.descripcion,'anio': monitor_a_actualizar.anio})
@@ -152,4 +152,4 @@ class DetallePlaca(DetailView):
 class EliminarPlaca(LoginRequiredMixin, DeleteView):
     model = Placa
     template_name = "hardware/eliminar_placa.html"
-    success_url = reverse_lazy('Placas')
+    success_url = reverse_lazy('placas')

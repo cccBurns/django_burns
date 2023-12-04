@@ -10,7 +10,7 @@ Actualizar Monitor
 
 {% block main %}
 
-<form action="" method="POST">
+<form action="{% if monitor.id %}{% url 'actualizar_monitor' monitor.id %}{% endif %}" method="POST">
     {% csrf_token %}
     <table>
         {{formulario.media}}
