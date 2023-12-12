@@ -5,13 +5,27 @@
 {% endblock title_head %}
 
 {% block h1_header %}
-<h1 style="text-align: center; margin-top: 20px;" >
-    Editar Perfil
-</h1>
+{% if request.user.datosextra.avatar %}
+<div><img src="{{request.user.datosextra.avatar.url}}" alt="Foto de Perfil" height='200px'></div>
+{% endif %}
+ <h1>Bienvenido {{request.user.username}}</h1>
 {% endblock h1_header %}
 
 {% block main %}
-    <div style="max-width: 400px; margin: auto; margin-top: 50px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+
+<h2>Editar Perfil</h2>
+<form action={% url "editar_perfil" %} method="POST" enctype='multipart/form-data'>
+   {% csrf_token %}
+   <table>
+      {{formulario.media}}
+      {{formulario}}
+   </table>
+   <input type="submit" value="Editar Perfil">
+</form>
+<a href="{% url "cambiar_password" %}">Cambiar Contraseña</a>
+
+
+    {% comment %} <div style="max-width: 400px; margin: auto; margin-top: 50px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         <form action={% url "editar_perfil" %} method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
             <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
@@ -33,5 +47,6 @@
             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; border-radius: 5px; cursor: pointer; font-size: 16px;">Editar Datos</button>
         </form>
         <a href={% url "cambiar_password" %} style="margin-top: 15px; display: block; text-align: center; font-size: 16px;">Cambiar Contraseña</a>
-    </div>
+    </div> {% endcomment %}
 {% endblock main %}
+
