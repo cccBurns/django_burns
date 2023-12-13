@@ -21,33 +21,15 @@
     </li>    
     <li>
         {{request.user.last_name}}
-    </li>    
+    </li>
+    <li>
+      {{request.user.email}}
+  </li>
     <li>
         {{biografia | safe}}
-    </li>
+    </li>    
 </ul>
 
-{% comment %} <form action={% url "login" %} method="POST" enctype='multipart/form-data'>
-    {% csrf_token %}
-    <table>
-        <p style="color:white;display:inline-block;margin-right:1rem">
-          {{request.user.first_name}}
-        </p>
-        {% if request.user.datosextra.avatar %}
-          <img src="{{request.user.datosextra.avatar.url}}" alt="avatar" height="40px">
-        {% else %}
-          <p>No hay avatar disponible.</p>
-        {% endif %}
-        <p>
-          {{request.user.datosextra.biografia}}
-        </p>
-      </table>
-
-
-</form> {% endcomment %}
 {% endblock main %}
 
 
-{% comment %} {% block h1_header %}
-Tu perfil HardGamer
-{% endblock h1_header %} {% endcomment %}

@@ -20,7 +20,7 @@ class EdicionPerfil(UserChangeForm):
     last_name = forms.CharField(label='Cambiar apellido', required=False)
     biografia = RichTextFormField()
     avatar = forms.ImageField(required=False)
-    
+        
     class Meta:
         model = User
         fields = ['email', 'first_name', 'last_name', 'biografia', 'avatar']

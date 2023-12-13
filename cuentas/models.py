@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 
+
 class DatosExtra(models.Model):
    user = models.OneToOneField(User, on_delete=models.CASCADE)
    biografia = RichTextField()

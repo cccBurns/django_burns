@@ -23,30 +23,6 @@
    <input type="submit" value="Editar Perfil">
 </form>
 <a href="{% url "cambiar_password" %}">Cambiar Contraseña</a>
-
-
-    {% comment %} <div style="max-width: 400px; margin: auto; margin-top: 50px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-        <form action={% url "editar_perfil" %} method="POST" enctype='multipart/form-data'>
-            {% csrf_token %}
-            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
-                <label for="{{ formulario.nombre.id_for_label }}" style="font-size: 16px;">Nombre:</label>
-                <input type="text" name="{{ formulario.nombre.name }}" id="{{ formulario.nombre.id_for_label }}" value="{{ formulario.nombre.value }}" required style="width: 100%; font-size: 16px;">
-            </div>
-            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
-                <label for="{{ formulario.apellido.id_for_label }}" style="font-size: 16px;">Apellido:</label>
-                <input type="text" name="{{ formulario.apellido.name }}" id="{{ formulario.apellido.id_for_label }}" value="{{ formulario.apellido.value }}" required style="width: 100%; font-size: 16px;">
-            </div>
-            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
-                <label for="{{ formulario.correo.id_for_label }}" style="font-size: 16px;">Correo Electrónico:</label>
-                <input type="email" name="{{ formulario.correo.name }}" id="{{ formulario.correo.id_for_label }}" value="{{ formulario.correo.value }}" required style="width: 100%; font-size: 16px;">
-            </div>
-            <div style="margin-bottom: 15px; display: flex; flex-direction: column;">
-                <label for="{{ formulario.foto.id_for_label }}" style="font-size: 16px;">Foto de Perfil:</label>
-                <input type="file" name="{{ formulario.foto.name }}" id="{{ formulario.foto.id_for_label }}" style="font-size: 16px;">
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; border-radius: 5px; cursor: pointer; font-size: 16px;">Editar Datos</button>
-        </form>
-        <a href={% url "cambiar_password" %} style="margin-top: 15px; display: block; text-align: center; font-size: 16px;">Cambiar Contraseña</a>
-    </div> {% endcomment %}
+    
 {% endblock main %}
 
